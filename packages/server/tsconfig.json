@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", // Version JS cible après compilation
+    "module": "ESNext", // Utilise les imports/exports ES modules (import/export) au lieu de require/module.exports
+    "moduleResolution": "bundler", // Résolution optimisée pour les bundlers modernes (tsx, esbuild)
+    "lib": ["ES2022"], // APIs JavaScript disponibles (Promise, async/await, etc.)
+    "rootDir": "./src", // Dossier source racine
+    "outDir": "./dist", // Dossier de sortie après compilation
+    "strict": true, // Active toutes les vérifications strictes TypeScript
+    "esModuleInterop": true, // Permet d'importer des modules CommonJS comme des ES modules
+    "forceConsistentCasingInFileNames": true, // Vérifie la casse des imports (sensible majuscules/minuscules)
+    "skipLibCheck": true, // Skip la vérification des types dans node_modules (gain de performance)
+    "resolveJsonModule": true, // Permet d'importer des fichiers JSON
+    "allowSyntheticDefaultImports": true, // Permet import express from 'express' au lieu de import * as express
+    "baseUrl": "./src", // Base pour les chemins relatifs
+    "paths": {
+      // Alias de chemins pour simplifier les imports
+      "@/*": ["*"], // import '@/utils' au lieu de '../../../utils'
+      "@config/*": ["config/*"],
+      "@services/*": ["services/*"],
+      "@models/*": ["models/*"],
+      "@routes/*": ["routes/*"],
+      "@middlewares/*": ["middlewares/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts", // Compile tous les fichiers .ts
+    "src/**/*.d.ts" // Inclut les fichiers de déclaration de types personnalisés
+  ],
+  "exclude": [
+    "node_modules", // Exclut les dépendances pour éviter de les compiler
+    "dist" // Exclut le dossier de sortie pour éviter une boucle de compilation
+  ]
+}
