@@ -13,7 +13,10 @@ Le dépôt est organisé en monorepo pnpm avec deux workspaces : `packages/clien
 
 ```powershell
 pnpm install
+pnpm prepare
 ```
+
+> **Note** : `pnpm prepare` initialise les hooks Git (Husky) pour la validation automatique des commits.
 
 ## Configuration des variables d'environnement
 
@@ -155,6 +158,9 @@ feature/US-03-paiement
 
 1. Créer une branche feature depuis `dev`
 2. Développer et commiter avec les conventions
+   - **Avant chaque commit** : Husky vérifie automatiquement le code
+   - **Lint-staged** : Formate et corrige automatiquement les fichiers modifiés
+   - **Commitlint** : Valide le format du message de commit
 3. Pousser la branche : `git push origin feature/US-XX-nom-feature`
 4. Créer une Pull Request vers `dev`
 5. Après review et validation, merger dans `dev`
@@ -163,11 +169,23 @@ feature/US-03-paiement
 
 ## Workflow de développement
 
-1. Installer les dépendances à la racine : `pnpm install`
-2. Configurer les fichiers `.env`
-3. Démarrer le monorepo : `pnpm dev`
-4. Accéder au client sur `http://localhost:5173`
-5. Accéder à l'API sur `http://localhost:3000`
+1. Installer les dépendances : `pnpm install`
+2. Initialiser les hooks Git : `pnpm prepare`
+3. Configurer les fichiers `.env`
+4. Démarrer le monorepo : `pnpm dev`
+5. Accéder au client sur `http://localhost:5173`
+6. Accéder à l'API sur `http://localhost:3000`
+
+### Qualité du code
+
+Le projet utilise des hooks Git automatiques :
+
+- **Pre-commit** : Avant chaque commit, le code est automatiquement formaté et vérifié
+  - ESLint sur le client (avec correction automatique)
+  - Prettier sur le serveur
+- **Commit-msg** : Le format du message de commit est validé (conventions de commit)
+
+Si le code ou le message ne respecte pas les règles, le commit est bloqué.
 
 ## Support
 

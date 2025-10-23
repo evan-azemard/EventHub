@@ -39,6 +39,7 @@ build/
 # Git
 .git/
 .gitignore
+.husky/
 
 # Docker
 .dockerignore
