@@ -1,7 +1,7 @@
+import { TestTemplate } from "@/components/templates";
+import { useTestManagement } from "@/hooks/useTestManagement";
+
 export default function Test() {
-  return (
-    <>
-      <h1>Hello World !</h1>
-    </>
-  );
+  const { message, error, loading } = useTestManagement();
+  return <TestTemplate message={message} error={error} loading={loading} />;
 }
