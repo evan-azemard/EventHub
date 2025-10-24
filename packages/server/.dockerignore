@@ -1,0 +1,53 @@
+# Node modules 
+node_modules/
+**/node_modules/
+
+# Logs
+*.log
+**/*.log
+
+uploads/
+
+# Environnements
+.env
+.env.*
+!.env.example
+!.env*.example
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env*.example
+
+# Build
+dist/
+build/
+**/dist/
+**/build/
+
+# Autres fichiers temporaires
+*.tmp
+*.temp
+
+# TypeScript incremental builds
+*.tsbuildinfo
+**/*.tsbuildinfo
+
+# Vite (cache)
+.vite/
+**/.vite/
+
+# Git
+.git/
+.gitignore
+.husky/
+
+# Docker
+.dockerignore
+Dockerfile*
+docker-compose*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
