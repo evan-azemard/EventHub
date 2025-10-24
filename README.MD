@@ -95,7 +95,58 @@ EventHub/
 
 ## Docker
 
-_(Section à compléter)_
+### Prérequis
+
+- Docker Desktop installé
+
+
+### Lancer l'application avec Docker
+
+```powershell
+# Construire et lancer tous les services
+docker-compose up --build
+
+# Lancer en arrière-plan
+docker-compose up -d
+
+# Voir les logs
+docker-compose logs -f
+
+# Arrêter les services
+docker-compose down
+
+# Arrêter et supprimer les volumes (données effacées)
+docker-compose down -v
+```
+
+### Services disponibles
+
+| Service    | URL                    | Description                      |
+| ---------- | ---------------------- | -------------------------------- |
+| Frontend   | http://localhost       | Application React (Nginx)        |
+| API        | http://localhost:8000  | Backend Express                  |
+| MongoDB    | mongodb://localhost:27017 | Base de données NoSQL         |
+| PostgreSQL | postgresql://localhost:5432 | Base de données SQL         |
+| Redis      | redis://localhost:6379 | Cache et sessions                |
+
+
+
+```powershell
+# Lister les conteneurs actifs
+docker ps
+
+# Entrer dans un conteneur
+docker-compose exec server sh
+
+# Voir les logs d'un service spécifique
+docker-compose logs -f frontend
+
+# Redémarrer un service
+docker-compose restart server
+
+# Nettoyer les images non utilisées
+docker system prune -a
+```
 
 ## Workflow Git
 
