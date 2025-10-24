@@ -2,7 +2,9 @@ import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 
 export const useTestManagement = () => {
-  const url = `${import.meta.env.VITE_API_URL}/test`;
+const baseUrl = "http://localhost:8000";
+
+  const url = `${baseUrl}/test`;
   const { data, isLoading, error } = useQuery({
     queryKey: ["test"],
     queryFn: async () => {

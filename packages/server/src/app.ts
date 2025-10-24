@@ -1,7 +1,7 @@
 import compression from "compression";
 import express from "express";
 import cors from "cors";
-import { env } from "./config/env";
+import { env } from "./config/env.js";
 import cookieParser from "cookie-parser";
 import { Request, Response } from "express";
 

@@ -1,5 +1,5 @@
 import { config } from "dotenv";
-import { EnvConfig } from "@/types/env";
+import { EnvConfig } from "@/types/env.js";
 import process from "process";
 
 config();
