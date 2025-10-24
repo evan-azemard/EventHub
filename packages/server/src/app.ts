@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/test", (_req: Request, res: Response) => {
-  res.json({ status: "ok" });
+  res.json({ message: "API fonctionne correctement" });
 });
 
 export default app;
