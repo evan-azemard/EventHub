@@ -1,0 +1,123 @@
+name: User Story
+description: Créer une nouvelle User Story pour le projet EventHub
+title: "[US-XXX]: "
+labels: ["user-story"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## User Story Template
+        Format: En tant que [type d'utilisateur], je veux [objectif], afin de [bénéfice].
+
+  - type: input
+    id: us-number
+    attributes:
+      label: Numéro US
+      description: Numéro de la user story (ex. US-001)
+      placeholder: "US-XXX"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: user-type
+    attributes:
+      label: Type d'utilisateur
+      description: Qui est concerné par cette user story?
+      options:
+        - Utilisateur (USER)
+        - Organisateur (ORGANIZER)
+        - Administrateur (ADMIN)
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: "Format: En tant que [type], je veux [objectif], afin de [bénéfice]"
+      placeholder: "En tant qu'utilisateur, je veux me connecter avec mon email et mot de passe, afin d'accéder à mon compte et mes réservations."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Critères d'acceptation
+      description: Liste des critères qui doivent être satisfaits
+      placeholder: |
+        - [ ] Critère 1
+        - [ ] Critère 2
+        - [ ] Critère 3
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priorité
+      description: Niveau de priorité de cette user story
+      options:
+        - Haute
+        - Moyenne
+        - Basse
+    validations:
+      required: true
+
+  - type: dropdown
+    id: estimation
+    attributes:
+      label: Estimation (Story Points)
+      description: Complexité estimée en points
+      options:
+        - "1"
+        - "2"
+        - "3"
+        - "5"
+        - "8"
+        - "13"
+        - "21"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Catégorie
+      description: Catégorie fonctionnelle
+      options:
+        - Authentification
+        - Consultation
+        - Réservation
+        - Profil
+        - Création événements
+        - Gestion événements
+        - Paiement
+        - Analytics
+        - Administration
+        - Configuration
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-notes
+    attributes:
+      label: Notes techniques (optionnel)
+      description: Informations techniques additionnelles, dépendances, etc.
+      placeholder: |
+        - Dépendances: US-001, US-002
+        - Technologies: React, Express, Stripe API
+        - Points d'attention: Sécurité des paiements
+
+  - type: textarea
+    id: definition-of-done
+    attributes:
+      label: Definition of Done
+      description: Conditions pour considérer la user story terminée
+      value: |
+        - [ ] Code développé et testé localement
+        - [ ] Tests unitaires écrits et passants
+        - [ ] Tests d'intégration si nécessaire
+        - [ ] Code review effectué
+        - [ ] Documentation mise à jour
+        - [ ] Déployé en environnement de développement
+        - [ ] Validé par le Product Owner

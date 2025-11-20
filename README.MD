@@ -4,6 +4,22 @@ Solution de gestion d'événements et de billetterie avec réservation en ligne.
 
 Le dépôt est organisé en monorepo pnpm avec deux workspaces : `packages/client` (frontend React + Vite) et `packages/server` (backend Express).
 
+## 📋 User Stories
+
+Le projet est structuré autour de **40 User Stories** complètes organisées en 7 sprints. Pour créer les issues GitHub:
+
+```bash
+# Démarrage rapide (3 commandes)
+./scripts/create-labels.sh
+./scripts/create-milestones.sh
+./scripts/create-issues.sh
+```
+
+📖 **Documentation complète:**
+- [QUICKSTART.md](QUICKSTART.md) - Guide de démarrage rapide
+- [USER_STORIES.md](USER_STORIES.md) - Détails des 40 user stories
+- [docs/ISSUES_CREATION_GUIDE.md](docs/ISSUES_CREATION_GUIDE.md) - Guide complet de création des issues
+
 ## Prérequis
 
 - Node.js 20+
